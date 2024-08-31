@@ -1,6 +1,7 @@
 package md23;
-/*
-*実力確認問題2-3.md
+
+/**
+* 実力確認問題2-3.md
 */
 class md23{
 	public static void main(String args[]) {
