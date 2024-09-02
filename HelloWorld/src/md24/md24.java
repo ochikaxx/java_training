@@ -3,7 +3,11 @@ package md24;
 /**
 * 実力確認問題2-4.md
 */
-class md24{
+class md24 {
+	/**
+	 * mainメソッド
+	 * @param args 実行引数
+	 */
 	public static void main(String args[]) {
 		int x = 7;
 		double y = x;

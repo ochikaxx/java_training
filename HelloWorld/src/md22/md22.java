@@ -1,9 +1,13 @@
 package md22;
 
 /**
-* 実力確認問題2-2.md
+* 実力確認問題2-2.mdメインクラス
 */
-class md22{
+class md22 {
+	/**
+	 * mainメソッド
+	 * @param args 実行引数
+	 */
 	public static void main(String args[]) {
 		String x = "Hello";
 		String y = "World";
