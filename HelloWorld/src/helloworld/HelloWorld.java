@@ -1,6 +1,6 @@
 package helloworld;
 
-/**
+/*
 *Hello World クラス
 */
 public class HelloWorld{
