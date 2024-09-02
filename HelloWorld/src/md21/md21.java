@@ -3,7 +3,7 @@ package md21;
 /**
  * 実力確認問題2-1.mdメインクラス
  */
-class md21 {
+class Md21 {
 	/** 
 	 * mainメソッド
 	 * @param args 実行引数

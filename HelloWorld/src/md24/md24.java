@@ -3,7 +3,7 @@ package md24;
 /**
  * 実力確認問題2-4.md
  */
-class md24 {
+class Md24 {
 	/**
 	 * mainメソッド
 	 * @param args 実行引数

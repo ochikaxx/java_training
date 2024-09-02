@@ -3,7 +3,7 @@ package md23;
 /**
  * 実力確認問題2-3.mdメインクラス
  */
-class md23 {
+class Md23 {
 	/**
 	 * mainメソッド
 	 * @param args 実行引数
