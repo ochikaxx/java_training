@@ -2,44 +2,6 @@ package md52;
 
 import java.io.*;
 
-class Calculator {
-	/**
-	 * passCalculatorメソッド
-	 * Calculateメソッド
-	 */
-	double value1;
-	double value2;
-	String operator;
-	
-	void passCalculator(double value1, double value2, String operator) {
-		this.value1 = value1;
-		this.value2 = value2;
-		this.operator = operator;
-	}
-	
-	double Calculate() {
-		double result = 0;
-		switch (operator) {
-			case "+":
-				result = value1 + value2;
-				break;
-			case "-":
-				result = value1 - value2;
-				break;
-			case "*":
-				result = value1 * value2;
-				break;
-			case "/":
-				result = value1 / value2;
-				break;
-			default:
-				System.out.println("(+,-,*,/のいずれかの演算子を入力してください。)");
-				break;
-		}
-		return result;
-	}
-}
-
 public class Md52 {
 	/**
 	 * mainメソッド
@@ -61,8 +23,10 @@ public class Md52 {
 		System.out.println("演算子を入力してください。");
 		String operator = br.readLine();
 		
-		Calculator calculator = new Calculator();
-		calculator.passCalculator(value1, value2, operator);
+		Md52Calculator calculator = new Md52Calculator();
+		calculator.setValue1(value1);
+		calculator.setValue2(value2);
+		calculator.setOperator(operator);
 		
 		double result = calculator.Calculate();
 		
