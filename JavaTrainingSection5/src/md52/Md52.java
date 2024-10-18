@@ -24,11 +24,8 @@ public class Md52 {
 		String operator = br.readLine();
 		
 		Md52Calculator calculator = new Md52Calculator();
-		calculator.setValue1(value1);
-		calculator.setValue2(value2);
-		calculator.setOperator(operator);
 		
-		double result = calculator.Calculate();
+		double result = calculator.Calculate(value1, value2, operator);
 		
 		System.out.println("計算結果" + "\t" + result);
 	}
