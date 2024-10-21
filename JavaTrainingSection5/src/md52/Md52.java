@@ -25,7 +25,7 @@ public class Md52 {
 		
 		Md52Calculator calculator = new Md52Calculator();
 		
-		double result = calculator.Calculate(value1, value2, operator);
+		double result = calculator.calculate(value1, value2, operator);
 		
 		System.out.println("計算結果" + "\t" + result);
 	}

@@ -9,7 +9,7 @@ public class Md52Calculator {
 	 * @param operator 演算子
 	 * @return result
 	 */
-	public double Calculate(double value1, double value2, String operator) {
+	public double calculate(double value1, double value2, String operator) {
 		double result = 0;
 		switch (operator) {
 			case "+":
