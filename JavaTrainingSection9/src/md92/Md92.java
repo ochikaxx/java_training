@@ -1,6 +1,8 @@
 package md92;
 
 import java.io.*;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Md92クラスは入力した名前と年齢を表示します。
@@ -23,21 +25,21 @@ public class Md92 {
 		String str1 = br.readLine();
 		int mode = Integer.parseInt(str1);
 		
-		// インターフェイス型変数宣言
-		Process process;
+		// マッピング
+		Map<Integer, Process> operation = new HashMap<>();
+		operation.put(1, new ProcessA());
+		operation.put(2, new ProcessB());
 		
-		// 入力モードに対応したクラスをインスタンス化
-		switch (mode) {
-			case 1:
-				process = new ProcessA();
-				break;
-			case 2:
-				process = new ProcessB();
-				break;
-			default:
-				System.out.println("正しいモードを入力してください。");
-				return;
+		// 入力されたモードの確認
+		if (operation.containsKey(mode)) {
+			System.out.println("正しいモードが選択されました。");
+		} else {
+			System.out.println("(1-2)のモードを入力してください。");
+			return;
 		}
+		
+		// 選択されたクラスを取得
+		Process process = operation.get(mode);
 		
 		// 名前と年齢の入力
 		System.out.println("名前を入力してください。");

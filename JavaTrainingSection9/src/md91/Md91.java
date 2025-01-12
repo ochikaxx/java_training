@@ -1,6 +1,8 @@
 package md91;
 
-import java.util.Scanner;
+import java.io.*;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Md91クラスは選択した四則演算を行います。
@@ -10,11 +12,11 @@ public class Md91 {
 	/**
 	 * mainメソッド
 	 * @param args
+	 * @throws IOException
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 		
-		// Scannerクラスのインスタンス作成
-		Scanner sc = new Scanner(System.in);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		// 演算項目選択メッセージ
 		System.out.println("演算する項目を選択してください。(1-4)");
@@ -22,41 +24,37 @@ public class Md91 {
 		System.out.println("2:引き算");
 		System.out.println("3:掛け算");
 		System.out.println("4:割り算");
-		int num = sc.nextInt();
+		String str1 = br.readLine();
+		int mode = Integer.parseInt(str1);
 		
-		// インターフェイス型変数宣言
-		CalculateBase calculator;
+		// マッピング
+		Map<Integer, CalculateBase> operation = new HashMap<>();
+		operation.put(1, new Addition());
+		operation.put(2, new Subtraction());
+		operation.put(3, new Multiplication());
+		operation.put(4, new Division());
 		
-		// 選択されたクラスをインスタンス化
-		switch (num) {
-			case 1:
-				calculator = new Addition();
-				break;
-			case 2:
-				calculator = new Subtraction();
-				break;
-			case 3:
-				calculator = new Multiplication();
-				break;
-			case 4:
-				calculator = new Division();
-				break;
-			default:
-				System.out.println("正しい項目を入力してください。");
-				sc.close();
-				return;
+		// 入力項目が存在するキーであるか確認
+		if (operation.containsKey(mode)) {
+			System.out.println("計算を開始します。");
+		} else {
+			System.out.println("(1-4)の項目を選択してください。");
+			return;
 		}
+		
+		// 選択された演算クラスを取得
+		CalculateBase calculator = operation.get(mode);
 		
 		// 演算する整数を入力
 		System.out.println("1つ目の数値を入力してください。");
-		int x = sc.nextInt();
+		String str2 = br.readLine();
+		int x = Integer.parseInt(str2);
 		System.out.println("2つ目の数値を入力してください。");
-		int y = sc.nextInt();
+		String str3 = br.readLine();
+		int y = Integer.parseInt(str3);
 
 		// 結果を表示
 		int result = calculator.calculate(x, y);
 		System.out.println("計算結果:" + result);
-		
-		sc.close();
 	}
 }
