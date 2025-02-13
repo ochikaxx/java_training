@@ -5,7 +5,9 @@ package md10;
  * 
  */
 public class CustomException extends Exception {
-
+	/**
+	 * シリアルバージョンUID
+	 */
 	private static final long serialVersionUID = 1L;
 	/**
 	 * CustomExceptionコンストラクタ

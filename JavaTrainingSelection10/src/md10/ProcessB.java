@@ -13,10 +13,10 @@ public class ProcessB implements Process {
 	 * @return 真ならばtrue偽ならばfalse
 	 */
 	public boolean check(String name, int age) throws CustomException {
-		if (!(name.length() >= 5 && name.length() <= 20 && age >= 30 && age <= 60)) {
-			throw new CustomException("名前が5~20文字以内かつ年齢が30~60歳である必要があります。");
-		} else {
+		if (name.length() >= 5 && name.length() <= 20 && age >= 30 && age <= 60) {
 			return true;
+		} else {
+			throw new CustomException("名前が5~20文字以内かつ年齢が30~60歳である必要があります。");
 		}
 	}
 	/**
