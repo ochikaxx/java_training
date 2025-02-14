@@ -8,9 +8,8 @@ interface Process {
 	 * checkメソッド
 	 * @param name
 	 * @param age
-	 * @return 真ならばtrue偽ならばfalse
 	 */
-	boolean check(String name, int age) throws CustomException;
+	void check(String name, int age) throws CustomException;
 	/**
 	 * runメソッド
 	 * @param name

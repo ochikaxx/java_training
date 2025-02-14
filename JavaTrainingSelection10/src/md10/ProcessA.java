@@ -7,16 +7,13 @@ package md10;
 public class ProcessA implements Process {
 	/**
 	 * checkメソッド
-	 * nameとageの値が条件に合っていたらtureを返します。
+	 * nameとageの値が条件に合わなければCustomExceptionをthrowします
 	 * @param name
 	 * @param age
-	 * @return 真ならばtrue偽ならばfalse
 	 */
-	public boolean check(String name, int age) throws CustomException {
-		if (name.length() < 10 && age >= 0 && age <= 140) {
-			return true;
-		} else {
-			throw new CustomException("名前が10文字未満かつ年齢が0~140歳である必要があります。");
+	public void check(String name, int age) throws CustomException {
+		if (name.length() >= 10 || age < 0 || age > 140) {
+			throw new CustomException("名前が10文字未満かつ0~140歳である必要があります。");
 		}
 	}
 	/**
