@@ -63,8 +63,8 @@ public class Md10 {
 
 			// 入力項目のチェックと出力
 			try {
-					process.check(name, age);
-					process.run(name, age);
+				process.check(name, age);
+				process.run(name, age);
 			} catch (CustomException e) {
 				System.out.println("エラー発生:" + e.getMessage());
 			}
